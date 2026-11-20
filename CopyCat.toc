@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: CopyCat
+## Notes: Catches Lua errors and opens them pre-selected so you can Ctrl+C instantly. /cc
+## Author: LankyFranky89
+## Version: 1.1.0
+## SavedVariables: CopyCatDB
+
+CopyCat.lua
