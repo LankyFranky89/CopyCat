@@ -2,7 +2,7 @@
 ## Title: CopyCat
 ## Notes: Catches Lua errors and opens them pre-selected so you can Ctrl+C instantly. /cc
 ## Author: LankyFranky89
-## Version: 1.1.0
+## Version: 1.1.1
 ## SavedVariables: CopyCatDB
 
 CopyCat.lua

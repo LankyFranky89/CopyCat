@@ -206,6 +206,10 @@ SlashCmdList.COPYCAT = function(m)
   elseif m == "blizz" then CopyCatDB.keepBlizzard = not CopyCatDB.keepBlizzard
     print("|cffff5555CopyCat|r Blizzard error popup too: " .. (CopyCatDB.keepBlizzard and "on" or "off"))
   elseif m == "test" then error("CopyCat test error")
+  elseif m == "secret" then
+    CopyCatFakeSecret = GetTime() + 30
+    print("|cffff5555CopyCat|r faking hidden chat for 30s. Now /roll, /say something and whisper yourself. Any error = an addon still needs the fix.")
+    C_Timer.After(30, function() CopyCatFakeSecret = nil; print("|cffff5555CopyCat|r hidden-chat test over.") end)
   elseif m == "debug" then CopyCatDB.debugCatch = (CopyCatDB.debugCatch == false)
     print("|cffff5555CopyCat|r catch debug commands: " .. (CopyCatDB.debugCatch ~= false and "on" or "off"))
   elseif m:match("^chat") then
@@ -215,5 +219,5 @@ SlashCmdList.COPYCAT = function(m)
     tinsert(errors, { debug = true, count = 1, full = ("[%s] last %d chat lines\n\n%s"):format(date("%H:%M:%S"), #out, table.concat(out, "\n")) })
     show(#errors)
   elseif #errors > 0 then show(index > 0 and index or #errors)
-  else print("|cffff5555CopyCat|r no errors yet. /cc clear | combat | blizz | debug (catch debug commands on/off) | chat 30 (copy last chat lines) | test") end
+  else print("|cffff5555CopyCat|r no errors yet. /cc clear | combat | blizz | debug (catch debug commands on/off) | chat 30 (copy last chat lines) | test | secret (fake hidden chat 30s)") end
 end
